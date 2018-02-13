@@ -1,0 +1,28 @@
+@mixin button-variant($color, $background, $border)
+    color: $color
+    background-color: $background
+    border-color: $border
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+        .open .dropdown-toggle&
+            color: $color
+            background-color: darken($background,10%)
+            border-color: darken($border, 12%)
+
+@mixin clearfix()
+    &:before,
+    &:after
+        content: ""
+        display: table
+    
+    &:after 
+        clear: both
+    
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) 
+    position: $position
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left

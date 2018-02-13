@@ -1,0 +1,1039 @@
+@import 'variables.sass'
+@import 'mixins.sass'
+@import 'animate.sass'
+@import 'loader.scss'
+
+body, html
+    height: 100%
+    width: 100%
+    font-family: 'Raleway', sans-serif
+    &.active
+        overflow-y: hidden
+
+body
+    -webkit-font-smoothing: antialiased
+    text-rendering: optimizelegibility
+    overflow-x: hidden
+    width: 100%
+    
+.container
+    width: 100%
+
+.btn-primary
+    margin-top: 15px
+    height: 57px
+    background-color: transparent
+    border: 2px solid rgba(0,0,0,1)
+    color: black
+    font-size: 12px
+    font-weight: bold
+    text-shadow: none
+    letter-spacing: 2px
+    line-height: 31px
+    padding: 11px 20px 
+    display: inline-block
+    transition: border-color 0.2s linear, background-color 0.2s linear, color 0.2s linear
+    -moz-transition: border-color 0.2s linear, background-color 0.2s linear, color 0.2s linear
+    -o-transition: border-color 0.2s linear, background-color 0.2s linear, color 0.2s linear
+    -webkit-transition: border-color 0.2s linear, background-color 0.2s linear, color 0.2s linear
+    &:hover
+        text-decoration: none
+        background-color: $brand-primary
+        border: 2px solid rgba(0,0,0,0)
+        color: white
+    &:focus
+        text-decoration: none
+        outline: none
+    &::after 
+        display: block
+        content: attr(title)
+        font-weight: bold
+        height: 1px
+        color: transparent
+        overflow: hidden
+        visibility: hidden
+
+    
+.header-outer
+    width: 100%
+    top: 0px
+    left: 0px
+    position: relative
+    background-color: transparent
+    z-index: 999
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.22)
+    -moz-box-shadow:  0 0 0px 0 rgba(0, 0, 0, 0.22)
+    -webkit-box-shadow:  0 0 0px 0 rgba(0, 0, 0, 0.22)
+    padding-left: 28px
+    padding-right: 28px
+    border: none
+
+@media(max-width:767px)
+    .header-outer
+        padding: 10px 0 18px 18px
+        height: 64px
+        margin-top: 7px
+    .carousel-control
+        visibility: hidden
+
+.carousel, .item, .active, .carousel-item
+    max-width: 100%
+    height: 100%
+
+.carousel-inner
+    height: 100%
+    
+.fill
+    width: 100%
+    height: 100%
+    background-position: center
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    background-size: cover
+    -o-background-size: cover
+    
+.carousel-fade
+    .carousel-inner 
+        .item 
+            transition-property: opacity
+        
+        .item,
+        .active.left,
+        .active.right 
+            opacity: 0
+
+        .active,
+        .next.left,
+        .prev.right 
+            opacity: 1
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right 
+            left: 0
+            transform: translate3d(0, 0, 0)
+
+    .carousel-control 
+        text-shadow: none
+        z-index: 2
+        width: 50px
+        height: 60px
+        top: 52%
+        margin-top: 1px
+        opacity: 1
+        background-color: rgba(0, 0, 0, 0.4)
+        border-radius: 0px 4px 4px 0px
+        -moz-border-radius: 0px 4px 4px 0px
+        -webkit-border-radius: 0px 4px 4px 0px
+        -o-border-radius: 0px 4px 4px 0px
+        transition: background-color 0.2s linear
+        -webkit-transition: background-color 0.2s linear
+        -o-transition: background-color 0.2s linear
+        -moz-transition: background-color 0.2s linear
+        &.right
+            border-radius: 4px 0px 0px 4px
+            -moz-border-radius: 4px 0px 0px 4px
+            -webkit-border-radius: 4px 0px 0px 4px
+            -o-border-radius: 4px 0px 0px 4px
+            transition: background-color 0.2s linear
+            -webkit-transition: background-color 0.2s linear
+            -o-transition: background-color 0.2s linear
+            -moz-transition: background-color 0.2s linear
+        &:hover,
+            background-color: rgba(0, 0, 0, 0.8)
+        
+.carousel-indicators
+    visibility: hidden
+
+.carousel-control
+    &.left, &.right
+        background-image: none
+        
+    .icon-next
+        right: 0
+        top: 0
+        margin: 15px 8px 15px 10px
+        font-family: 'icomoon'
+        font-size: 21px
+        line-height: 30px
+        text-align: center
+        &:before
+            content: '\e000'
+    .icon-prev
+        left: 0
+        top: 0
+        margin: 15px 10px 15px 8px
+        font-family: 'icomoon'
+        font-size: 21px
+        line-height: 30px
+        text-align: center
+        &:before
+            content: '\e001'
+.carousel-caption
+    height: 400px!important
+    
+.slide1
+    background-image: url('../img/slide1-1920.jpg')
+    background-attachment: fixed
+    height: 150%
+
+@media(max-width:768px)
+    .slide1
+        -webkit-transform: none!important
+        background-attachment: scroll
+        image-rendering: pixelated
+        background-position: center
+        height: 100%
+
+
+.caption1 
+    padding: 0 7% 0 7%
+    text-align: left
+    left: 0
+    right: 0
+    width: 100%
+    top: 40%
+    margin-top: -65px
+    margin-left: -10px
+    h1
+        font-size: 50px
+        font-weight: 900
+        letter-spacing: -1px
+        text-shadow: none
+    @media(max-width:1200px)
+        h1
+            margin-top: 30px
+            font-size: 40px
+    @media(max-width:992px)
+        h1
+            margin-top: 60px
+            font-size: 30px
+    @media(max-width:767px)
+        h1
+            font-size: 25px
+    
+    h2
+        margin-top: 0
+        font-size: 24px
+        font-weight: 500
+        letter-spacing: 0.5px
+        text-shadow: none
+    @media(max-width:1200px)
+        h2
+            font-size: 18px
+    @media(max-width:992px)
+        h2
+            font-size: 15px
+    @media(max-width:767px)
+        h2
+            font-size: 13px
+            
+@media(max-width:992px)
+    .caption1 
+        padding: 0 10% 0 10%
+    
+.slide2
+    background-image: url('../img/slide2v2.jpg')
+    background-position: bottom
+    height: 120%
+
+@media(max-width:425px)
+    .slide2
+        background-image: url(../img/slide2v2mobile.jpg)
+        image-rendering: pixelated
+        background-position: center
+        height: 100%
+        
+.caption2 
+    padding: 0 8% 0 6%
+    text-align: right
+    left: 0
+    right: 0
+    width: 100%
+    top: 34%
+    margin-top: -65px
+    margin-right: -10px
+    .btn-primary
+        color: white
+        border: 2px solid rgba(255,255,255,0.6)
+        &:hover
+            color: black
+            border: 2px solid rgba(255,255,255,0)
+    h1
+        font-size: 50px
+        font-weight: 900
+        letter-spacing: -1px
+        text-shadow: none
+    @media(max-width:1200px)
+        h1
+            margin-top: 30px
+            font-size: 40px
+    @media(max-width:992px)
+        h1
+            margin-top: 60px
+            font-size: 30px
+    @media(max-width:767px)
+        h1
+            font-size: 25px
+    
+    h2
+        margin-top: 0
+        font-size: 22px
+        font-weight: 500
+        letter-spacing: 0.5px
+        text-shadow: none
+    @media(max-width:1200px)
+        h2
+            font-size: 18px
+    @media(max-width:992px)
+        h2
+            font-size: 15px
+    @media(max-width:767px)
+        h2
+            font-size: 13px
+    @media(max-width:768px)
+        h1, h2
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4)
+    @media(max-width:425px)
+        h1, h2
+            text-shadow: none
+    
+@media(max-width:991px)
+    .btn-primary
+        margin-top: 5px
+        height: 47px
+        font-size: 9px
+        padding: 6px 13px 6px 13px
+
+@media(max-width:992px)
+    .caption2 
+        padding: 0 8% 0 6%
+@media(max-width:425px)
+    .caption2
+        top: 25%
+        
+.slide3
+    background-image: url(../img/notebook2.jpg)
+    background-position: bottom
+    height: 120%
+
+@media(max-width:768px)
+    .slide3
+        image-rendering: pixelated
+        background-position: center
+        height: 100%
+    
+.caption3 
+    padding: 0 10% 0 10%
+    text-align: center
+    left: 0
+    right: 0
+    width: 100%
+    top: 50%
+    margin-top: -65px
+    h1
+        font-size: 50px
+        font-weight: 900
+        letter-spacing: -1px
+        text-shadow: none
+    @media(max-width:1200px)
+        h1
+            margin-top: 30px
+            font-size: 40px
+    @media(max-width:992px)
+        h1
+            margin-top: 60px
+            font-size: 30px
+    @media(max-width:767px)
+        h1
+            font-size: 25px
+    
+    h2
+        margin-top: 0
+        font-size: 22px
+        font-weight: 500
+        letter-spacing: 0.5px
+        text-shadow: none
+    @media(max-width:1200px)
+        h2
+            font-size: 18px
+    @media(max-width:992px)
+        h2
+            font-size: 15px
+    @media(max-width:767px)
+        h2
+            font-size: 13px
+    .btn-primary
+        background-color: $brand-primary
+        border: 2px solid rgba(0,0,0,0)
+        &:hover
+        
+    @media(max-width:992px)
+        .btn-primary
+            margin-top: 5px
+            height: 47px
+            font-size: 9px
+            padding: 6px 13px 6px 13px
+        h1, h2
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4)
+    
+.content-down-arrow
+    height: 60px
+    width: 60px
+    display: block
+    margin: auto
+    position: absolute
+    bottom: 30px
+    z-index: 1
+    left: 50%
+    margin-left: -30px
+    text-decoration: none
+
+.down-arrow
+    height: 60px
+    width: 60px
+    font-size: 20px
+    font-family: 'icomoon'
+    font-style: normal
+    color: white
+    line-height: 60px
+    animation: 3.4s ease-in-out infinite fadebottom
+    -webkit-animation: 3.4s ease-in-out infinite fadebottom
+    display: inline-block
+    text-align: center
+    &:before
+        content: '\e008'
+       
+.text-muted
+    color: $gray
+
+.text-primary
+    color: $brand-primary
+    
+// NavBar
+
+.navbar
+    height: 85px
+    border: 0
+
+.navbar-default
+    background-color: white
+    border-color: transparent
+    height: 85px
+    transition: 0.5s
+       
+    .navbar-brand
+        padding: 0 0 0 0
+        color: $brand-primary
+        width: 150px
+        img
+            margin: auto
+        .logocolor
+            display: none
+    @media(max-width: 767px)
+        .logowhite
+            display: none
+        .logocolor
+            display: block!important
+                
+    .navbar-collapse
+        border: 0
+        
+    .navbar-toggle
+        background-color: transparent
+        border-color: transparent
+        margin: 0
+        border: 0
+        top: -2px
+        padding-right: 18px
+        
+        .icon-bar
+            background-color: #a9a9a9
+            width: 19px
+            
+        &:hover,
+        &:focus
+            background-color: transparent
+             
+    .nav
+        li
+            a
+                .heading-font
+                    font-weight: 400
+                    letter-spacing: 1px
+                    color: white
+                    &:hover,
+                    &:focus
+                        color: $brand-primary
+                        outline: none
+    
+@media(min-width: 768px)
+    .navbar-default
+        background-color: transparent
+        padding: 28px 0 0 0
+        -webkit-transition: all 0.5s
+        -moz-transition: all 0.5s
+        transition: all 0.5s
+        border: none
+        margin: 0
+        
+        .navbar-nav>.active>a
+            opacity: 1
+            -webkit-transition: opacity 1s ease-in-out
+            -moz-transition: opacity 1s ease-in-out
+            -ms-transition: opacity 1s ease-in-out
+            -o-transition: opacity 1s ease-in-out
+            transition: opacity 1s ease-in-out
+            color: white
+            background-color: transparent
+            &:hover,
+            &:focus
+                color: white
+                background-color: transparent
+            &:before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 2px
+                bottom: 8px
+                left: 0
+                background-color: white
+                visibility: visible
+                -webkit-transform: scaleX(1)
+                transform: scaleX(1)
+        
+        .navbar-brand
+            font-size: 2em
+            -webkit-transition: all 0.3s
+            -moz-transition: all 0.3s
+            transition: all 0.3s
+            
+        .navbar-nav>li
+            padding: 0 13px 0 13px
+            
+        .navbar-nav>li>a
+            padding-top: 5px
+            font-weight: bold
+            font-size: 16px
+            color: white
+            background-color: transparent
+            opacity: 0.75
+            position: relative
+            text-decoration: none
+            &:hover,
+            &:focus,
+                color: white
+            &:before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 2px
+                bottom: 8px
+                left: 0
+                background-color: white
+                visibility: hidden
+                -webkit-transform: scaleX(0)
+                transform: scaleX(0)
+                -webkit-transition: all 0.3s ease-in-out 0s
+                transition: all 0.3s ease-in-out 0s
+            &:hover:before,
+                visibility: visible
+                -webkit-transform: scaleX(1)
+                transform: scaleX(1)
+            
+    .nav>li>a
+        padding-right: 0px
+        padding-left: 0px
+                    
+    .navbar-default.navbar-shrink
+        background: rgba(255,255,255,0.9)
+        height: 64px
+        padding: 16px 0
+        transition: 0.5s
+        li
+            a
+                color: $gray!important
+                opacity: 1!important
+                &:before
+                    content: ""
+                    position: absolute
+                    width: 100%
+                    height: 2px
+                    bottom: 8px
+                    left: 0
+                    background-color: $brand-primary
+                    visibility: hidden
+                    -webkit-transform: scaleX(0)
+                    transform: scaleX(0)
+                    -webkit-transition: all 0.3s ease-in-out 0s
+                    transition: all 0.3s ease-in-out 0s
+                &:hover:before,
+                    visibility: visible
+                    -webkit-transform: scaleX(1)
+                    transform: scaleX(1)
+        .active>a:before
+            background-color: $brand-primary
+            
+        .logocolor
+            display: block
+        .logowhite
+            display: none
+                
+        
+        
+    .navbar-right
+        height: auto
+        float: right
+        margin-right: 0
+        
+.navbar-fixed-top
+    z-index: 900
+        
+        
+//MENU
+
+@media(max-width: 767px)
+    .navbar-default
+        height: 64px
+    
+    .navbar-default .navbar-nav>.active>a
+        background-color: transparent!important
+        opacity: 1
+        transition: 0.5s
+        
+    .navbar-fixed-top 
+        width: 100%
+    
+    .navbar-fixed-top .navbar-collapse, 
+    .navbar-fixed-bottom .navbar-collapse
+        max-height: none
+  
+    .navbar-nav
+        margin: 0
+        height: 50px
+
+    /* General styles for all menus */
+    .cbp-spmenu
+        background: $brand-primary
+        position: fixed
+        padding: 0
+        margin: 0 !important
+        overflow-x: hidden
+        overflow-y: visible
+        display: block
+        visibility: visible
+        
+    .cbp-spmenu h3 
+        color: #afdefa
+        font-size: 1.9em
+        padding: 20px
+        margin: 0
+        font-weight: 300
+        background: #0d77b6
+    
+    .navbar-fixed-top .cbp-spmenu
+        bottom: 0
+        padding: 70px 33px 33px 33px
+    
+    .cbp-spmenu li
+        height: 100%
+
+    .cbp-spmenu li a 
+        opacity: 0.75
+        display: block
+        color: white!important
+        padding: 0 7px!important
+        font-size: 36px
+        font-weight: bold
+        line-height: 36px
+    
+    
+    /* Orientation-dependent styles for the content of the menu */
+    .cbp-spmenu-vertical 
+        width: 260px
+        height: 100%
+        top: 0
+        z-index: 10000
+
+    .cbp-spmenu-horizontal 
+        width: 100%
+        height: 150px
+        left: 0
+        z-index: 1000
+        overflow: hidden
+
+    .cbp-spmenu-horizontal h3 
+        height: 100%
+        width: 20%
+        float: left
+
+    .cbp-spmenu-horizontal a 
+        float: left
+        width: 60%
+        padding: 0.8em
+        border-left: none
+
+    /* Vertical menu that slides from the left or right */
+    .cbp-spmenu-left 
+        left: -260px
+
+    .cbp-spmenu-right 
+        right: -260px
+
+    .cbp-spmenu-left.cbp-spmenu-open,
+    .cbp-spmenu-push-toright .navbar-fixed-top .cbp-spmenu-left.cbp-spmenu-open
+        left: 0px
+
+    .cbp-spmenu-right.cbp-spmenu-open,
+    .cbp-spmenu-push-toleft .navbar-fixed-top .cbp-spmenu-right.cbp-spmenu-open
+        right: 0px
+
+    /* Push classes applied to the body */
+    .cbp-spmenu-push 
+        overflow-x: hidden
+        position: relative
+        left: 0
+        
+    .cbp-spmenu-push-toright,
+    .cbp-spmenu-push-toright .navbar-fixed-top 
+        left: 260px
+
+    .cbp-spmenu-push-toleft,
+    .cbp-spmenu-push-toleft .navbar-fixed-top
+        left: -260px
+        
+    /* Transitions */
+    .cbp-spmenu,
+    .cbp-spmenu-push,
+    .navbar
+        -webkit-transition: all 1s ease
+        -moz-transition: all 1s ease
+        transition: all 1s ease
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+    //Close Menu
+    a
+        .close 
+            opacity: 1!important
+            background: transparent
+            width: 50px
+            height: 50px
+            position: absolute
+            z-index: 10000
+            right: 18px
+            top: 18px
+
+
+        .close:after 
+            content: ''
+            height: 25px
+            border-left: 3px solid #fff
+            position: absolute
+            transform: rotate(45deg)
+            right: 20px
+            opacity: 1
+
+        .close:before 
+            content: ''
+            height: 25px
+            border-left: 3px solid white
+            position: absolute
+            transform: rotate(-45deg)
+            right: 20px
+            opacity: 1
+                    
+.overlay
+    position: fixed
+    z-index: 900
+    top: 0
+    bottom: 0
+    left: 0
+    width: 25px
+    background-color: rgba(0, 0, 0, 0)
+    &.active
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        width: 100%
+        transition: background-color .35s
+        background-color: rgba(0, 0, 0, .5)
+    
+@media(min-width: 768px)
+    .overlay
+        display: none
+header
+    .background-cover
+        text-align: center
+        color: white
+        
+//CUSTOM FONTS
+
+@font-face 
+    font-family: 'icomoon'
+    src: url('../fonts/icomoon.eot')
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg')
+    font-weight: normal
+    font-style: normal
+
+[data-icon]:before
+    font-family: 'icomoon'!important
+    content: attr(data-icon)
+    speak: none
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+//PORTFOLIO
+    
+.portfolio
+    position: relative
+    z-index: 2
+    overflow: hidden
+
+.work-belt
+    width: 200%
+    position: relative
+    //transform: translate3d(0%,0,0)
+    left: 0%
+    -webkit-transition: all 1s ease
+    -moz-transition: all 1s ease
+    -o-transition: all 1s ease
+    transition: all 1s ease
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    
+    @include clearfix()
+
+.thumb-wrap
+    width: 50%
+    float: left
+
+.thumb-container
+    max-width: 100%
+    margin: 0px auto
+    padding: 40px 10%
+    @include clearfix()
+    
+    .thumb-unit
+        display: block
+        width: 25%
+        float: left
+        position: relative
+        padding-bottom: 25%
+        cursor: pointer
+        overflow: hidden
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+        //background:
+            image: url(../img/work/cube/thumb.jpg)
+            position: center center
+            repeat: no-repeat
+            size: 100%
+        img
+            position: absolute
+            top: 0
+            width: 100%
+            transition: all 0.2s ease
+        &:hover img
+            transform: scale(1.1)
+            transition: all 0.2s ease
+        &:hover .thumb-overlay-text
+            opacity: 1
+            transform: scale(1)
+            transition: all 0.2s ease
+        &:hover .thumb-overlay-bg
+            opacity: 0.8
+            transition: opacity 0.2s ease
+        &:hover .square-border
+            border: 6px solid $brand-primary
+            opacity: 1
+            transition: all 0.2s ease-in-out
+    .thumb-overlay-wrap
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        .thumb-overlay-bg
+            width: 100%
+            height: 100%
+            background: $gray-darkest
+            opacity: 0
+            transition: opacity 0.2s ease
+        .thumb-overlay-text
+            position: absolute
+            top: 35%
+            left: 5%
+            right: 5%
+            color: white
+            text-align: center
+            opacity: 0
+            transform: scale(0.8)
+            transition: all 0.2s ease
+            
+            h2
+                margin-top: 0
+                margin-bottom: 5%
+                font-size: 30px
+                font-weight: bold
+            h3
+                margin-top: 0
+                padding: 0 15px
+                font-size: 15px
+                line-height: 25px
+                font-weight: normal
+        @media (max-width: 1024px)
+            .thumb-overlay-text
+                top: 30%
+        @media (max-width: 768px)
+            .thumb-overlay-text
+                top: 25%
+                h2
+                    font-size: 20px
+                h3
+                    padding: 0 5px
+                    font-size: 12px
+        @media (max-width: 650px)
+            .thumb-overlay-text
+                top: 37%
+                h2
+                    font-size: 30px
+                h3
+                    font-size: 15px
+        .square-border
+            position: absolute
+            top: 5%
+            right: 5%
+            height: 90%
+            width: 90%
+            opacity: 0
+            border: 0px solid $brand-primary
+            transition: all 0.2s ease-in-out
+    @media only screen and (max-width : 480px)
+        .thumb-unit
+            width: 100%
+            padding-bottom: 100%
+
+
+    @media only screen and (max-width : 650px) and (min-width : 481px)
+        .thumb-unit
+            width: 50%
+            padding-bottom: 50%
+    //@media only screen and (max-width : 1050px) and (min-width : 651px)
+        .thumb-unit
+            width: 33.3%
+            padding-bottom: 33.3%
+
+    @media only screen and (max-width : 1290px) and (min-width : 1051px)
+        .thumb-unit
+            width: 25%
+            padding-bottom: 25%
+@media only screen and (max-width : 650px)
+    .thumb-container
+        padding: 20px 0%
+        
+.work-wrap
+
+    float: right
+    width: 50%
+    i
+        margin-top: 3%
+        margin-left: 10px
+        float: left
+        border: 3px solid $gray
+        border-radius: 25px
+        height: 50px
+        width: 50px
+        color: $gray
+        padding: 0 7px
+        position: absolute
+        transform: scale(0.8)
+        cursor: pointer
+        z-index: 2
+        transition: all 0.2s linear
+        h2
+            color: $brand-primary
+            position: relative
+            font-family: raleway
+            padding: 0
+            margin-top: -33px
+            margin-left: 50px
+            float: left
+            font-size: 25px
+            width: 200px
+            font-weight: 600
+            transition: all 0.2s linear
+            opacity: 0
+        &:hover h2
+            transition: all 0.2s linear
+            opacity: 1
+        &:hover
+            transition: all 0.2s linear
+            color: $brand-primary
+            border: 3px solid $brand-primary
+
+@media (min-width: 991px)
+    .work-wrap
+        i
+            margin-top: 1%
+            margin-left: 1%
+
+@media (max-width: 767px)
+    .work-container
+        padding-top: 70px
+
+.button-center
+    width: 50%
+    margin: 0px auto 40px
+    text-align: center
+    .button-icon
+        display: inline-block
+        background-color: transparent
+        border: 2px solid $gray-darkest
+        text-align: center
+        font-size: 15px
+        padding: 20px
+        width: 200px
+        cursor: pointer
+        box-shadow: none
+        line-height: 9px
+        font-weight: bold
+        letter-spacing: 1px
+        transition: all 0.5s
+        span
+            display: inline-block
+            position: relative
+            padding-right: 0px
+            transition: padding-right 0.5s
+            &:after
+                font-size: 20px
+                font-family: 'icomoon'
+                content: '\e601'
+                position: absolute
+                color: rgba(255,255,255,0)
+                top: -1px
+                right: 0px
+                transition: color 0.2s
+        &:hover
+            background-color: $brand-primary
+            border: 2px solid $brand-primary
+            font-weight: 800
+            color: white
+            transition: all 0.2s
+        &:hover span
+            padding-right: 40px
+            transition: padding-right 0.2s
+        &:hover span:after
+            color: rgba(255,255,255,1)
+            transition: color 0.4s
+
+        
+        
+        
+        
+        
+        
